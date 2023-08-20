@@ -1,5 +1,5 @@
 import Foundation
-import Polyline
+import PolylineLib
 import Turf
 
 /**

@@ -5,7 +5,7 @@ import OHHTTPStubs
 #if SWIFT_PACKAGE
 import OHHTTPStubsSwift
 #endif
-import Polyline
+import PolylineLib
 @testable import MapboxDirections
 
 class V5Tests: XCTestCase {

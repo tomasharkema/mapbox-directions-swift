@@ -20,7 +20,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/raphaelmor/Polyline.git", from: "5.0.2"),
+        .package(url: "https://github.com/tomasharkema/Polyline.git", branch: "feature/module-collision"),
         .package(url: "https://github.com/mapbox/turf-swift.git", from: "2.6.1"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),
         .package(url: "https://github.com/AliSoftware/OHHTTPStubs", from: "9.1.0")
@@ -31,7 +31,7 @@ let package = Package(
         .target(
             name: "MapboxDirections",
             dependencies: [
-                .product(name: "Polyline", package: "Polyline"),
+                .product(name: "PolylineLib", package: "Polyline"),
                 .product(name: "Turf", package: "turf-swift")
             ],
             exclude: ["Info.plist"]),
@@ -39,7 +39,7 @@ let package = Package(
             name: "MapboxDirectionsTests",
             dependencies: [
                 "MapboxDirections",
-                .product(name: "Polyline", package: "Polyline"),
+                .product(name: "PolylineLib", package: "Polyline"),
                 .product(name: "Turf", package: "turf-swift"),
                 .product(name:  "OHHTTPStubsSwift", package: "OHHTTPStubs", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS]))
             ],

@@ -1,9 +1,9 @@
 import Foundation
-import func Polyline.encodeCoordinates
+import func PolylineLib.encodeCoordinates
 #if canImport(CoreLocation)
-import typealias Polyline.LocationCoordinate2D
+import typealias PolylineLib.LocationCoordinate2D
 #else
-import struct Polyline.LocationCoordinate2D
+import struct PolylineLib.LocationCoordinate2D
 #endif
 import Turf
 

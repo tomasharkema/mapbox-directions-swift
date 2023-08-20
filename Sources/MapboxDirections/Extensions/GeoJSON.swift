@@ -1,9 +1,9 @@
 import Foundation
-import func Polyline.decodePolyline
+import func PolylineLib.decodePolyline
 #if canImport(CoreLocation)
-import typealias Polyline.LocationCoordinate2D
+import typealias PolylineLib.LocationCoordinate2D
 #else
-import struct Polyline.LocationCoordinate2D
+import struct PolylineLib.LocationCoordinate2D
 #endif
 import Turf
 
@@ -24,7 +24,7 @@ extension LineString {
     }
     
     init(encodedPolyline: String, precision: Double) throws {
-        guard var coordinates = decodePolyline(encodedPolyline, precision: precision) as [Polyline.LocationCoordinate2D]? else {
+        guard var coordinates = decodePolyline(encodedPolyline, precision: precision) as [PolylineLib.LocationCoordinate2D]? else {
             throw GeometryError.cannotDecodePolyline(precision: precision)
         }
         // If the polyline has zero length with both endpoints at the same coordinate, Polyline drops one of the coordinates.
